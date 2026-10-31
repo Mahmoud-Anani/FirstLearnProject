@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <BuildTasksDirectory Condition=" '$(BuildTasksDirectory)' == ''">$(MSBuildProgramFiles32)\MSBuild\Microsoft\Dynamics\AX</BuildTasksDirectory>
+    <Model>TrainingModel</Model>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <OutputPath>bin</OutputPath>
+    <SchemaVersion>2.0</SchemaVersion>
+    <GenerateCrossReferences>True</GenerateCrossReferences>
+    <RunAppCheckerRules>False</RunAppCheckerRules>
+    <LogAppcheckerDiagsAsErrors>False</LogAppcheckerDiagsAsErrors>
+    <DeployOnline>False</DeployOnline>
+    <ProjectGuid>{db4f9bae-532c-4e93-a4db-20a0730af57d}</ProjectGuid>
+    <Name>FirstLearnProject</Name>
+    <RootNamespace>FirstLearnProject</RootNamespace>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
+    <Configuration>Debug</Configuration>
+    <DBSyncInBuild>True</DBSyncInBuild>
+    <GenerateFormAdaptors>False</GenerateFormAdaptors>
+    <Company>
+    </Company>
+    <Partition>initial</Partition>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DataEntityExpandParentChildRelations>False</DataEntityExpandParentChildRelations>
+    <DataEntityUseLabelTextAsFieldName>False</DataEntityUseLabelTextAsFieldName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <DebugSymbols>true</DebugSymbols>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+  </PropertyGroup>
+  <ItemGroup>
+    <Folder Include="Base Enums\" />
+    <Folder Include="Classes\" />
+    <Folder Include="Data Entities\" />
+    <Folder Include="Security Privileges\" />
+    <Folder Include="Simple Queries\" />
+    <Folder Include="Tables\" />
+    <Folder Include="Views\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="AxClass\UserCRUDRunnableClass">
+      <SubType>Content</SubType>
+      <Name>UserCRUDRunnableClass</Name>
+      <Link>Classes\UserCRUDRunnableClass</Link>
+    </Content>
+    <Content Include="AxDataEntityView\UserOData">
+      <SubType>Content</SubType>
+      <Name>UserOData</Name>
+      <Link>Data Entities\UserOData</Link>
+    </Content>
+    <Content Include="AxEnum\BaseEnum1">
+      <SubType>Content</SubType>
+      <Name>BaseEnum1</Name>
+      <Link>Base Enums\BaseEnum1</Link>
+    </Content>
+    <Content Include="AxEnum\UserBaseEnum">
+      <SubType>Content</SubType>
+      <Name>UserBaseEnum</Name>
+      <Link>Base Enums\UserBaseEnum</Link>
+    </Content>
+    <Content Include="AxQuery\CategorieProductUserQuery">
+      <SubType>Content</SubType>
+      <Name>CategorieProductUserQuery</Name>
+      <Link>Simple Queries\CategorieProductUserQuery</Link>
+    </Content>
+    <Content Include="AxSecurityPrivilege\UserODataMaintain">
+      <SubType>Content</SubType>
+      <Name>UserODataMaintain</Name>
+      <Link>Security Privileges\UserODataMaintain</Link>
+    </Content>
+    <Content Include="AxSecurityPrivilege\UserODataView">
+      <SubType>Content</SubType>
+      <Name>UserODataView</Name>
+      <Link>Security Privileges\UserODataView</Link>
+    </Content>
+    <Content Include="AxTable\CategorieTable">
+      <SubType>Content</SubType>
+      <Name>CategorieTable</Name>
+      <Link>Tables\CategorieTable</Link>
+    </Content>
+    <Content Include="AxTable\ProductTable">
+      <SubType>Content</SubType>
+      <Name>ProductTable</Name>
+      <Link>Tables\ProductTable</Link>
+    </Content>
+    <Content Include="AxTable\UserODataStaging">
+      <SubType>Content</SubType>
+      <Name>UserODataStaging</Name>
+      <Link>Tables\UserODataStaging</Link>
+    </Content>
+    <Content Include="AxTable\UserTable">
+      <SubType>Content</SubType>
+      <Name>UserTable</Name>
+      <Link>Tables\UserTable</Link>
+    </Content>
+    <Content Include="AxView\UserProductCategorieView">
+      <SubType>Content</SubType>
+      <Name>UserProductCategorieView</Name>
+      <Link>Views\UserProductCategorieView</Link>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.Common.targets" />
+  <Import Project="$(BuildTasksDirectory)\Microsoft.Dynamics.Framework.Tools.BuildTasks.17.0.targets" />
+</Project>
